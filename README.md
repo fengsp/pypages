@@ -16,6 +16,8 @@
         # get current page
         page = 3
         # retrieve the objects of the certain page
+        # you should handle your data pagination yourself(database query or other ways)
+        # make sure use the same per_page value and pass in the right objects total number
         objects = range(10)
         p = Paginator(100, per_page=10, current=page, range_num=5)
         # you can attach your objects to the paginator
