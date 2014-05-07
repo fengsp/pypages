@@ -1,4 +1,4 @@
-pypages
-=======
+PyPages: Easier Pagination
+==========================
 
-Python Pagination for Humans™.
+Do pagination in python like a charm.
