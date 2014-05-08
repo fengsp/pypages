@@ -7,7 +7,7 @@ Do pagination in python like a charm.
 Links
 `````
 
-* `documentation <http://packages.python.org/pypages>`_
+* `documentation <https://github.com/fengsp/pypages>`_
 * `development version
   <http://github.com/fengsp/pypages/zipball/master#egg=pypages-dev>`_
 
