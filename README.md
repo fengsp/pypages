@@ -48,7 +48,7 @@
         if p.has_previous:
             print "<li><a href='%s'>previous</a></li>" % p.previous
         print "<li>%s/%s</li>" % (p.current, p.page_num)
-        if p.has_next:
+        if p.next: # pythonic, of course you can check p.has_next too
             print "<li><a href='%s'>next</a></li>" % p.next
         print "</ul>"
 
