@@ -76,6 +76,6 @@
 * **page_num** - the total number of pages
 * **pages** - the page range, a list like `[4, 5, 6, 7, 8]`
 * **has_previous** - bool value to indicate whether current page have previous page
-* **has_next** - bool value to indicate whether current page have previous page
+* **has_next** - bool value to indicate whether current page have next page
 * **previous** - the previous page number, if do not exist, will be `None`
 * **next** - the next page number, if do not exist, will be `None`
