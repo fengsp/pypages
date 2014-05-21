@@ -9,48 +9,50 @@
 
 ##usage
 
-    from pypages import Paginator
+```python
+from pypages import Paginator
 
-    # Inside view func
-    def view():
-        # get current page
-        page = 3
-        # retrieve the objects of the certain page
-        # you should handle your data pagination yourself(database query or other ways)
-        # make sure use the same per_page value and pass in the right objects total number
-        objects = range(10)
-        p = Paginator(100, per_page=10, current=page, range_num=5)
-        # you can attach your objects to the paginator
-        p.objects = objects
-        return render_all(p=p)
+# Inside view func
+def view():
+    # get current page
+    page = 3
+    # retrieve the objects of the certain page
+    # you should handle your data pagination yourself(database query or other ways)
+    # make sure use the same per_page value and pass in the right objects total number
+    objects = range(10)
+    p = Paginator(100, per_page=10, current=page, range_num=5)
+    # you can attach your objects to the paginator
+    p.objects = objects
+    return render_all(p=p)
     
-    def render_all(p):
-        print "Your objects:"
-        for o in p.objects:
-            print o
-        print "Your pages:"
-        print "<ul>"
-        print "<li><a href='1'>first</a></li>"
-        for page in p.pages:
-            if page == p.current:
-                print "<li>%s</li>" % page
-            else:
-                print "<li><a href='%s'>%s</a></li>" % (page, page)
-        print "<li><a href='%s'>last</a></li>" % p.page_num
-        print "</ul>"
+def render_all(p):
+    print "Your objects:"
+    for o in p.objects:
+        print o
+    print "Your pages:"
+    print "<ul>"
+    print "<li><a href='1'>first</a></li>"
+    for page in p.pages:
+        if page == p.current:
+            print "<li>%s</li>" % page
+        else:
+            print "<li><a href='%s'>%s</a></li>" % (page, page)
+    print "<li><a href='%s'>last</a></li>" % p.page_num
+    print "</ul>"
 
-    def render(p):
-        print "Your objects:"
-        for o in p.objects:
-            print o
-        print "Your pages:"
-        print "<ul>"
-        if p.has_previous:
-            print "<li><a href='%s'>previous</a></li>" % p.previous
-        print "<li>%s/%s</li>" % (p.current, p.page_num)
-        if p.next: # pythonic, of course you can check p.has_next too
-            print "<li><a href='%s'>next</a></li>" % p.next
-        print "</ul>"
+def render(p):
+    print "Your objects:"
+    for o in p.objects:
+        print o
+    print "Your pages:"
+    print "<ul>"
+    if p.has_previous:
+        print "<li><a href='%s'>previous</a></li>" % p.previous
+    print "<li>%s/%s</li>" % (p.current, p.page_num)
+    if p.next: # pythonic, of course you can check p.has_next too
+        print "<li><a href='%s'>next</a></li>" % p.next
+    print "</ul>"
+```
 
 ##api
 
