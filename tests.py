@@ -4,7 +4,7 @@ from pypages import Paginator
 
 
 class PyPagesTestCase(unittest.TestCase):
-    
+
     def test_object_num(self):
         p = Paginator(100)
         self.assertEquals(p.object_num, 100)
@@ -153,8 +153,8 @@ class PyPagesTestCase(unittest.TestCase):
 
     def test_exception(self):
         self.assertRaises(AssertionError, Paginator, -145)
-        self.assertRaises((AssertionError, ZeroDivisionError), 
-                            Paginator, 145, 0)
+        self.assertRaises((AssertionError, ZeroDivisionError),
+                          Paginator, 145, 0)
         self.assertRaises(AssertionError, Paginator, 145, range_num=-1)
         self.assertRaises(ValueError, Paginator, "value")
 

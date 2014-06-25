@@ -40,9 +40,9 @@ class Paginator(object):
                   page minus half of the page range length.
     :param range_num: The maximum page range length, default 10
     """
-    
+
     def __init__(self, object_num, per_page=10, current=1, start=None,
-                       range_num=10):
+                 range_num=10):
         self._start = self._end = self._current = self._page_num = None
         self.object_num = int(object_num)
         self.per_page = int(per_page)
@@ -105,10 +105,10 @@ class Paginator(object):
         """Returns the total number of pages.
         """
         if self._page_num is None:
-            self._page_num = int(math.ceil(self.object_num / 
+            self._page_num = int(math.ceil(self.object_num /
                                            float(self.per_page)))
         return self._page_num
-    
+
     @property
     def has_previous(self):
         return self.current > 1
